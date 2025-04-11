@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros - Alebrijes</title>
+  <link rel="stylesheet" href="style/style.css">
+
+
+
+  
+  <!--Font titulo Almendra Display-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almendra+Display&family=Gowun+Dodum&display=swap"
+      rel="stylesheet">
+  <!--Font body figtree -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet">
+  <!--Font logo kablammo-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kablammo&display=swap" rel="stylesheet">
+</head>
+
+
+  <style>   
+
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+   body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Figtree', sans-serif;
+    background-image: url(../background.png);
+}
+
+p{
+  font-family: "Figtree", sans-serif;
+  font-size: 30px;
+  color: black;
+}
+
+
+
+
+   .menu-icon {
+    font-size: 2rem;
+    color: var(--pink);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 100;
+    transition: transform 0.3s ease;
+  }
+
+  .menu-icon:hover {
+    transform: rotate(90deg);
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    animation: slideDown 0.3s ease-in-out;
+  }
+
+  .mobile-menu.visible {
+    display: flex;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .mobile-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin: 8px 0;
+    font-weight: bold;
+    transition: color 0.2s;
+  }
+
+  .mobile-menu a:hover {
+    color: var(--pink);
+  }
+  .mobile-menu {
+     display: none;
+     flex-direction: column;
+     align-items: flex-start;
+    }
+
+    .mobile-menu.visible {
+        display: flex;
+    }
+header{
+    flex-grow: 1;
+    margin: auto;
+    background-color: pink;
+
+    height: 250px;
+    width: 100%;
+
+}
+
+header h1{ 
+    font-family: "Kablammo", system-ui;
+    font-weight: 300;
+    text-align: center;
+    font-size: 60px;
+    padding: 30px 30px;
+    color: black;
+    }
+
+    #topBtn {
+
+position: fixed;
+bottom: 40px;
+right: 20px;
+z-index: 99;
+width: 90px;            
+height: 90px;           
+border: none;
+background-image: url(../Adobe\ Express\ -\ file\ \(1\).png);
+background-size: cover; 
+background-position: center;
+background-repeat: no-repeat;
+background-color: transparent;
+cursor: pointer;
+border-radius: 50%;     
+display: none;
+
+
+}
+
+#topBtn:hover {
+transform: scale(1.1);
+
+} 
+
+@keyframes giroTortilla{
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(720deg);
+}
+}
+
+#topBtn.girando {
+animation: giroTortilla 1s infinite;
+}
+
+
+
+
+  </style>
+</head>
+
+
+<body>
+  <header>
+    <h1>A l e b r i j e</h1>
+  </header>
+
+  <button onclick="topFunction()" id="topBtn">↑</button>
+
+
+
+  <!-- Botón O rosa -->
+  <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars">O</i>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Inicio</a>
+    <a href="menu.html">Menú</a>
+    <a href="about_us.html">Contacto</a>
+    <a href="resenas.html">Reseñas</a>
+  </div>
+
+
+<div class="fondo"></div>
+  <h1>Nosotros</h1>
+
+  <p>
+    En Alebrije, nuestra pasión es ofrecer una experiencia<br>
+    gastronómica auténtica y memorable con temática huichol.
+  </p>
+
+  <div class="rating">
+    <input type="radio" id="star5" name="rating" value="5">
+    <label for="star5" class="star">&#9733;</label>
+    <input type="radio" id="star4" name="rating" value="4">
+    <label for="star4" class="star">&#9733;</label>
+    <input type="radio" id="star3" name="rating" value="3">
+    <label for="star3" class="star">&#9733;</label>
+    <input type="radio" id="star2" name="rating" value="2">
+    <label for="star2" class="star">&#9733;</label>
+    <input type="radio" id="star1" name="rating" value="1">
+    <label for="star1" class="star">&#9733;</label>
+    </div>
+    <div class="review-container">
+        <h2>Reseñas</h2>
+        <div class="review-list">
+        <!-- Aquí se mostrarán las reseñas existentes -->
+        </div>
+        <form class="review-form">
+        <textarea id="review-text" placeholder="Escribe tu reseña aquí..."></textarea>
+        <div class="file-input-container">
+        <input type="file" id="file-input" class="file-input">
+        <label for="file-input" class="file-input-label">Cargar foto</label>
+        </div>
+        <button id="add-review-btn">Agregar Reseña</button>
+        </form>
+        </div>
+
+
+  <div id="resenas2">
+    <img src="media/images.png" alt="">
+  </div>
+  <div class="footer-bar"></div>
+  
+<script src="js/script.js"></script>
+
+  
+</body>
+
+</html>

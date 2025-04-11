@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alebrijes - Contacto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+ 
+  <!--Font titulo Almendra Display-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almendra+Display&family=Gowun+Dodum&display=swap"
+      rel="stylesheet">
+  <!--Font body figtree -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet">
+  <!--Font logo kablammo-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kablammo&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #ec407a;
+      --light-pink: #fbe9e9;
+      --text-dark: #1e1e1e;
+      --font-title: 'Almendra Display', serif;
+      --font-body: 'Figtree', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+
+    header{
+  flex-grow: 1;
+  margin: auto;
+  background-color: pink;
+  height: 150px;
+
+}
+
+header h1{ 
+  font-family: "Kablammo", system-ui;
+  font-weight: 300;
+  text-align: center;
+  font-size: 60px;
+  padding: 30px 30px;
+
+}
+
+
+
+
+    body {
+       background-image: url(../parcial2\ -\ Copy/imagenes/background.png
+  );
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      text-align: center;
+      padding-bottom: 60px;
+    }
+
+    .logo {
+      width: 120px;
+      margin: 16px auto;
+      display: block;
+    }
+
+    .menu-icon {
+      font-size: 2rem;
+      color: var(--pink);
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      cursor: pointer;
+      z-index: 100;
+      transition: transform 0.3s ease;
+    }
+
+    .menu-icon:hover {
+      transform: rotate(90deg);
+    }
+
+    .mobile-menu {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      animation: slideDown 0.3s ease-in-out;
+    }
+
+    .mobile-menu.visible {
+      display: flex;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .mobile-menu a {
+      text-decoration: none;
+      color: var(--text-dark);
+      margin: 8px 0;
+      font-weight: bold;
+      transition: color 0.2s;
+      
+    }
+
+    .mobile-menu a:hover {
+      color: var(--pink);
+    }
+
+    h2 {
+      font-family: var(--font-title);
+      font-size: 2rem;
+      color: var(--pink);
+      margin-top: 12px;
+      animation: fadeIn 1s ease;
+    }
+
+    .address {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .restaurant-image {
+      width: 90%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      margin-bottom: 24px;
+    }
+
+    .map-container {
+      width: 90%;
+      margin: 0 auto 24px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
+
+    .contact-section {
+      background-color: white;
+      padding: 24px;
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+    }
+
+    .contact-title {
+      font-family: var(--font-title);
+      font-size: 2.0rem;
+      color:  #ec407a;;
+      margin-bottom: 16px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .contact-item {
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .contact-item h3 {
+      color: var(--pink);
+      font-family: var(--font-title);
+      font-size: 1.2rem;
+    }
+
+    .contact-item p {
+      font-size: 1rem;
+      margin-top: 4px;
+      
+    }
+        
+    .social-icons a {
+      font-size: 1.8rem;
+      margin: 0 8px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .footer-bar {
+      background-color: var(--pink);
+      width: 100%;
+      height: 12px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .mobile-menu {
+     display: none;
+     flex-direction: column;
+     align-items: flex-start;
+    }
+
+    .mobile-menu.visible {
+        display: flex;
+    }
+
+    @media (min-width: 768px) {
+      h2 { font-size: 2.5rem; }
+      .restaurant-image, .map-container iframe { height: 300px; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+
+
+
+    footer{
+    height: 150PX;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: black;
+    margin-top: 100px;
+    
+  }
+
+  footer p{
+    margin: 0;
+    padding: 12px;
+    color: pink;
+    text-align: center;
+    font-family: "Kablammo", system-ui;
+  }
+
+
+  #topBtn {
+    position: fixed;
+ bottom: 40px;
+ right: 20px;
+ z-index: 99;
+ width: 90px;            
+ height: 90px;          
+ border: none;
+ background-image: url(../Adobe\ Express\ -\ file\ \(1\).png);
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-color: transparent;
+ cursor: pointer;
+ border-radius: 50%;    
+ display: none;
+
+ 
+
+
+}
+
+#topBtn:hover {
+ transform: scale(1.1);
+
+}
+
+@keyframes giroTortilla{
+ 0% {
+     transform: rotate(0deg);
+ }
+ 100% {
+     transform: rotate(720deg);
+ }
+}
+
+#topBtn.girando {
+ animation: giroTortilla 1s infinite;
+}
+
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+
+  <!-- Botón O rosa -->
+  <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars">O</i>
+  </div>
+
+  <button onclick="topFunction()" id="topBtn">↑</button>
+  
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Inicio</a>
+    <a href="menu.html">Menú</a>
+    <a href="about_us.html">Ubicación</a>
+    <a href="resenas.html">Reseñas</a>
+  </div>
+
+
+
+
+  <body>
+    <header>
+        <h1>A l e b r i j e</h1>
+    </header>
+
+
+  <h2>Encuéntranos</h2>
+  <div class="address">
+    <p>Av. Tecnológico #6610</p>
+    <p>Col. Nuevo Hipódromo, CP 32320</p>
+  </div>
+
+
+
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.122816452827!2d-106.407758185104!3d31.69032848129464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86d1b8d0144a34c9%3A0x1f3d2f2b0b9b929c!2sAv.%20Tecnol%C3%B3gico%206610%2C%20Nuevo%20Hip%C3%B3dromo%2C%2032320%20Cd%20Ju%C3%A1rez%2C%20Chih.!5e0!3m2!1ses!2smx!4v1615401589445!5m2!1ses!2smx" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+
+  <div class="contact-section">
+    <div class="contact-title">Contáctanos</div>
+    <div class="contact-info">
+      <div class="contact-item">
+        <h3>Teléfono</h3>
+        <p>656758134</p>
+      </div>
+      <div class="contact-item">
+        <h3>Redes sociales</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i>@alebrijes</a><br>
+          <a href="#"><i class="fab fa-instagram"></i>@alebrijes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<script src="js/script.js"></script>
+
+
+
+</body>
+
+
+
+</html>

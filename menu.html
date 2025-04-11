@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alebrijes Cocina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+
+
+  
+  <!--Font titulo Almendra Display-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almendra+Display&family=Gowun+Dodum&display=swap"
+      rel="stylesheet">
+  <!--Font body figtree -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet">
+  <!--Font logo kablammo-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kablammo&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+
+      <h1>A l e b r i j e</h1>
+
+
+  </header>
+
+  
+
+   <!-- Botón O rosa -->
+   <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars">O</i>
+  </div>
+
+  <button onclick="topFunction()" id="topBtn">↑</button>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Inicio</a>
+    <a href="menu.html">Menú</a>
+    <a href="about_us.html">Contacto</a>
+    <a href="resenas.html">Reseñas</a>
+  </div>
+
+  <script src="js/script.js"></script>
+
+  <main id="app">
+  </main>
+
+  <script>
+    const app = document.getElementById('app');
+
+    const menuItems = {
+      desayunos: [
+        {
+          name: "Enchiladas de Chilorio",
+          description: "Tortillas de maiz envueltas en chile jalapeno, serrano y salsa casera.",
+          price: "$120",
+          image: "images/enchiladas_chilorio.webp"
+        },
+        {
+          name: "Chilaquiles en salsa de tres chiles",
+          description: "Chilaquiles con 3 salsas diferentes.",
+          price: "$110",
+          image: "images/1366_521.jpg"
+        },
+        {
+          name: "Burrito de picadillo",
+          description: "Rico burrito para empezar el dia  con carne molida, cebolla, papas etc.",
+          price: "$90",
+          image: "images/maxresdefault (1).jpg"
+        },
+        {
+          name: "Gordita de harina de asado",
+          description: "Deliciosa grodita de asado de rojo yummy!",
+          price: "$90",
+          image: "images/hq720 (1).jpg"
+        }
+      ],
+      comidas: [
+        {
+          name: "Tacos de pescado con salsa",
+          description: "Tortillas de harina con filete de pescado, ideal para una comida balanceada ",
+          price: "$150",
+          image: "images/d7d92e4b154fef5c882e37210766ee90.avif"
+        },
+        {
+          name: "Aguacate  Campechano",
+          description: "Aguacate sazonado y relleno de chorizo",
+          price: "$130",
+          image: "images/slide26-aguacate-campechano.jpg"
+        },
+        {
+          name: "Tacos de bistec",
+          description: "Deliciosos tacos de bistec, con cebolla, tomate. ajo etc.",
+          price: "$170",
+          image: "images/tacos-bistec-1024x717.jpg"
+        },
+        {
+          name: "Tacos al Pastor",
+          description: "Ricos tacos al pastor, con cebolla, cilantro. ajo etc. ",
+          price: "$170",
+          image: "images/1366_2000.jpg"
+        }
+      ],
+      cena: [
+        {
+          name: "Tacos de pescado con salsa",
+          description: "Deliciosa sopa de Tortillas, perfecta para una cena ligera y nutritiva.",
+          price: "$100",
+          image: "images/sopa-de-tortilla-300x191.webp"
+        },
+        {
+          name: "Pastel Azteca",
+          description: "Lasaña mexicana con pollo, tortillas, chile poblano y granos de maíz amarillo.",
+          price: "$110",
+          image: "images/Chicken-Tortilla-Casserole-Pastel-Azteca-900x600.webp"
+        },
+        {
+          name: "Quesadillas de huitlacoche y flor de calabaza",
+          description: "Rica quesedilla de huitlachole y flor de calabaza.",
+          price: "$120",
+          image: "images/hq720.jpg"
+        },
+        {
+          name: "Chilaquiles de tortilla Azul",
+          description: "Chilaquiles de tortilla azul, quezo, cebolla y crema",
+          price: "$120",
+          image: "images/images (1).jpg"
+        }
+      ],
+      bebidas: [
+        {
+          name: "Piña Colada",
+          price: "$40",
+          image: "images/photo.jpg"
+        },
+        {
+          name: "Limonada",
+          price: "$45",
+          image: "images/unnamed.png"
+        },
+        {
+          name: "Cervesa",
+          price: "$90",
+          image: "images/playa-del-carmen-quintana-roo-mexico-2022-corona-beer-bottle-in-restaurant-bar-in-playa-del-carmen-mexico-free-photo.jpg"
+        },
+        {
+          name: "Refrescos",
+          price: "$90",
+          image: "images/997029c827d5bbd693f570196687487d.jpg",
+          description: "Coca-cola, sprite, Pepsi, Peñafiel, Fanta etc.",
+        }
+      ]
+    };
+
+    const routes = {
+      home: `
+        <div class="hero">
+          <img src="images/93755a5adcb03c95de50aa342d.jpg" alt="Platillo principal" />
+        </div>
+        <div class="section-grid">
+          <a href="#desayunos" class="card">
+            <img src="images/enchiladas_chilorio.webp" alt="Desayunos" />
+            <p>Desayunos</p>
+          </a>
+          <a href="#comidas" class="card">
+            <img src="images/d7d92e4b154fef5c882e37210766ee90.avif" alt="Comidas" />
+            <p>Comidas</p>
+          </a>
+          <a href="#cena" class="card">
+            <img src="images/images (1).jpg" alt="Cena" />
+            <p>Cena</p>
+          </a>
+          <a href="#bebidas" class="card">
+            <img src="images/playa-del-carmen-quintana-roo-mexico-2022-corona-beer-bottle-in-restaurant-bar-in-playa-del-carmen-mexico-free-photo.jpg" alt="Bebidas" />
+            <p>Bebidas</p>
+          </a>
+        </div>
+      `,
+      desayunos: `
+        <div class="page">
+          <h2>Desayunos</h2>
+          <div class="menu-items">
+            ${menuItems.desayunos.map(item => `
+              <div class="menu-item">
+                <img src="${item.image}" alt="${item.name}" />
+                <h3>${item.name}</h3>
+                <p>${item.description}</p>
+                <p class="price">${item.price}</p>
+              </div>
+            `).join('')}
+          </div>
+          <a href="#home" class="btn-back">← Volver</a>
+        </div>
+      `,
+      comidas: `
+        <div class="page">
+          <h2>Comidas</h2>
+          <div class="menu-items">
+            ${menuItems.comidas.map(item => `
+              <div class="menu-item">
+                <img src="${item.image}" alt="${item.name}" />
+                <h3>${item.name}</h3>
+                <p>${item.description}</p>
+                <p class="price">${item.price}</p>
+              </div>
+            `).join('')}
+          </div>
+          <a href="#home" class="btn-back">← Volver</a>
+        </div>
+      `,
+      cena: `
+        <div class="page">
+          <h2>Cena</h2>
+          <div class="menu-items">
+            ${menuItems.cena.map(item => `
+              <div class="menu-item">
+                <img src="${item.image}" alt="${item.name}" />
+                <h3>${item.name}</h3>
+                <p>${item.description}</p>
+                <p class="price">${item.price}</p>
+              </div>
+            `).join('')}
+          </div>
+          <a href="#home" class="btn-back">← Volver</a>
+        </div>
+      `,
+      bebidas: `
+        <div class="page">
+          <h2>Bebidas</h2>
+          <div class="menu-items">
+            ${menuItems.bebidas.map(item => `
+              <div class="menu-item">
+                <img src="${item.image}" alt="${item.name}" />
+                <h3>${item.name}</h3>
+                <p>${item.description}</p>
+                <p class="price">${item.price}</p>
+              </div>
+            `).join('')}
+          </div>
+          <a href="#home" class="btn-back">← Volver</a>
+        </div>
+      `
+    };
+
+    function render(route) {
+      app.innerHTML = routes[route] || routes.home;
+    }
+
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.replace('#', '') || 'home';
+      render(hash);
+    });
+
+    render('home');
+  </script>
+      <footer>
+        <p>&copy; A L E B R I J E</p>
+    </footer>
+</body>
+</html>
